@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using static XInputDotNetPure.GamePadState;
 
 namespace XInputDotNetPure
 {
-    class Imports
+    public class Imports
     {
         internal const string DLLName = "XInputInterface";
 
@@ -196,7 +197,7 @@ namespace XInputDotNetPure
     public struct GamePadState
     {
         [StructLayout(LayoutKind.Sequential)]
-        internal struct RawState
+        public struct RawState
         {
             public uint dwPacketNumber;
             public GamePad Gamepad;
@@ -316,6 +317,7 @@ namespace XInputDotNetPure
         {
             get { return thumbSticks; }
         }
+
     }
 
     public enum PlayerIndex
